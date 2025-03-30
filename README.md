@@ -104,9 +104,10 @@ Ensure you have **Python 3.x** installed and the following libraries:
 
 ### References
 
-- **CTU-13 Dataset:** [Stratosphere IPS Datasets](#)
-- García, S., Grill, M., Stiborek, J., & Zunino, A. (2014). *An empirical comparison of botnet detection methods.* Computers & Security, 45, 100-123. [Link](#)
-- Lakhina, A., Crovella, M., & Diot, C. (2004). *Diagnosing Network-Wide Traffic Anomalies.* SIGCOMM Computer Communication Review.
+- **CTU-13 Dataset:** [Stratosphere IPS Datasets](https://www.stratosphereips.org/datasets-ctu13)
+- García, S., Grill, M., Stiborek, J., & Zunino, A. (2014). *An empirical comparison of botnet detection methods.* Computers & Security, 45, 100-123. [Link](https://www.sciencedirect.com/science/article/abs/pii/S0167404814000923)
+- Lakhina, A., Crovella, M., & Diot, C. (2004). *Diagnosing Network-Wide Traffic Anomalies.* SIGCOMM Computer Communication Review. [Link](https://doi.org/10.1145/1029844.1030034)
+
 
 
   
