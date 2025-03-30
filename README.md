@@ -12,10 +12,6 @@ This repository implements a PCA-based method for botnet detection using two com
 - [Dataset Description and Statistical Analysis](#dataset-description-and-statistical-analysis)
 - [Lakhina Entropy-Based PCA](#lakhina-entropy-based-pca)
 - [FLAGS Detection Approach](#flags-detection-approach)
-- [Implementation Details](#implementation-details)
-  - [Preprocessing and Feature Extraction](#preprocessing-and-feature-extraction)
-  - [PCA and Anomaly Scoring](#pca-and-anomaly-scoring)
-  - [Hybrid Model (PCA + Logistic Regression)](#hybrid-model-pca--logistic-regression)
 - [Results and Evaluation](#results-and-evaluation)
 - [Usage](#usage)
 - [References](#references)
@@ -92,3 +88,27 @@ The project evaluates the detection system on the CTU-13 dataset using performan
    ```bash
    git clone https://github.com/yourusername/Botnet-detection-PCA-based-method-on-CTU-13-Dataset.git
    cd Botnet-detection-PCA-based-method-on-CTU-13-Dataset
+
+
+## Set Up the Environment
+
+Ensure you have **Python 3.x** installed and the following libraries:
+- **pandas**
+- **numpy**
+- **scikit-learn**
+- **matplotlib**
+- **seaborn**
+
+
+
+
+### References
+
+- **CTU-13 Dataset:** [Stratosphere IPS Datasets](#)
+- García, S., Grill, M., Stiborek, J., & Zunino, A. (2014). *An empirical comparison of botnet detection methods.* Computers & Security, 45, 100-123. [Link](#)
+- Lakhina, A., Crovella, M., & Diot, C. (2004). *Diagnosing Network-Wide Traffic Anomalies.* SIGCOMM Computer Communication Review.
+
+
+  
+Feel free to modify any sections to better match your specific implementation details or personal style.
+
