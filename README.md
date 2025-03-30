@@ -74,37 +74,6 @@ This method is designed to detect various types of attacks, such as TCP SYN Floo
 
 ---
 
-## Implementation Details
-
-### Preprocessing and Feature Extraction
-- **Utility Functions:**  
-  - `compute_entropy()`: Computes Shannon entropy.  
-  - `get_flow_label()`: Identifies malicious flows by checking for “From-Botnet”.  
-  - `parse_state_flags()`: Extracts TCP flag indicators from the 'State' field.  
-  - `add_flag_columns()`: Adds TCP flag columns to the DataFrame.  
-  - `aggregate_features()`: Groups flows by source IP, calculates flag frequencies, entropies, and assigns an aggregated label.
-
-- **Data Flow:**  
-  1. Load the .binetflow file for a given scenario (e.g., scenario 12).  
-  2. Filter for TCP flows and process the "State" column to extract flags.  
-  3. Aggregate features by IP and save the processed data as a CSV.
-
-### PCA and Anomaly Scoring
-- **PCA Application:**  
-  The `perform_pca()` function standardizes the selected features (e.g., entropies), applies PCA, and selects significant components based on an eigenvalue threshold.
-  
-- **Anomaly Scoring:**  
-  The `calculate_anomaly_scores()` function projects the standardized data onto two subspaces (major and minor) and computes anomaly scores by normalizing each projection by its corresponding eigenvalue. A high score indicates significant deviation from normal behavior.
-
-### Hybrid Model (PCA + Logistic Regression)
-- **Model Training:**  
-  A hybrid model is trained by combining PCA for dimensionality reduction with logistic regression for classification. This model is optimized to handle imbalanced data and provides probabilistic predictions.
-  
-- **Threshold Optimization:**  
-  The system includes threshold optimization to convert continuous probability scores into binary decisions (normal vs. anomalous), maximizing the F1-score.
-
----
-
 ## Results and Evaluation
 
 The project evaluates the detection system on the CTU-13 dataset using performance metrics such as:
@@ -114,13 +83,6 @@ The project evaluates the detection system on the CTU-13 dataset using performan
 - **False Negatives (FN):** Malicious IPs that were missed.
 - **Precision, Recall (TPR), Accuracy, F1-Score, and FPR.**
 
-### Key Findings:
-- **High Recall:** All malicious IPs were detected.
-- **Low Precision:** Many normal IPs were flagged as malicious, reducing precision.
-- **Impact of Class Imbalance:** With very few malicious IPs, overall accuracy is high but precision is a more reliable indicator.
-- **No Time-Based Evaluation:** The evaluation was conducted on the entire aggregated dataset, without splitting data into time windows as suggested in the literature.
-
-A heatmap of F1-scores was generated to optimize detection thresholds, helping to balance sensitivity and specificity.
 
 ---
 
